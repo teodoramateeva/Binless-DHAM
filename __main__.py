@@ -4,7 +4,7 @@ if __name__ == "__main__":
     # import the necessary class 
     from Binless_DHAM import BinlessDHAM
 
-    data = np.load('coorData.npy').T
+    data = np.load('coorData.npy', allow_pickle=True).T
     force = np.full(data.shape[0], 10.0)
     constr = np.linspace(-38, 38, data.shape[0])
 
