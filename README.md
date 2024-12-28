@@ -2,9 +2,9 @@
 
 ## Overview
 
-This repository contains a python implementation of the Binless DHAM method, demonstrated on the simulation of the passage of Na<sup>+</sup> ions through the transmembrane pore of the GLIC channel. This implementation is focused on obtaining a free energy profile. For this example, binless DHAM results are in very good agreement with traditional methods (DHAM, WHAM), using a lagtime of 100 fs and bin number of 1000. Our tests show that the convergence of the profile with respect to bin size and lag time needs to be verified in each case. For DHAM, and Markov state model-based methods in general, smaller bin sizes provide more accurate results, as the diffusion process is closer approximated with better discretization.
+This repository contains a python implementation of the Binless DHAM method, particularly for umbrella sampling simulations, demonstrated on the simulation of the passage of Na<sup>+</sup> ions through the transmembrane pore of the GLIC channel. This implementation is focused on obtaining a free energy profile. For this example, binless DHAM results are in very good agreement with traditional methods (DHAM, WHAM), using a lagtime of 100 fs and bin number of 1000. Our tests show that the convergence of the profile with respect to bin size and lag time needs to be verified in each case. For DHAM, and Markov state model-based methods in general, smaller bin sizes provide more accurate results, as the diffusion process is closer approximated with better discretization.
 
-This code can be used for analysing data from umbrella sampling simulations. It requires your data to be stored in an `.npy` file. The structure of the data should be such that each row represents a set of data points for a snapshot and each column represents the data across windows. In the example simulation a total of 153 umbrella windows with a uniform spacing of 0.5 Å were employed to determine the free energy.  
+This code requires your data to be stored in an `.npy` file. The structure of the data should be such that each column represents the data across windows and each row represents a set of data points for a snapshot. In the example simulation a total of 153 umbrella windows with a uniform spacing of 0.5 Å were employed to determine the free energy.  
 
 ## Prerequisites
 
@@ -38,7 +38,7 @@ Make sure the example `.npy` file or the `.npy` file you want to work with exist
 python __main__.py
 ```
 
-You have to modify the `__main__.py` script based on the parameters of your biased simulation.
+You have to modify the `__main__.py` script based on the parameters of your biased simulation. The number of bins for the reaction coordinate and the lagtime are hardcoded. While they work for this dataset, they aren't dynamically adjusted based on the data. You might need to change those.
 
 You might get a warning, which is related to the version of numba, numba==0.56.0 should be installed to supress the warning if needed.
 
