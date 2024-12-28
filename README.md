@@ -22,7 +22,7 @@ The file storing potential energies from the MD simulation  `coorData.npy`.
 
 #### Clone the repository to your local machine:
 ```bash
-git https://github.com/teodoramateeva/Binless-DHAM
+git clone git@github.com:teodoramateeva/Binless-DHAM.git
 ```
 #### Make sure you are located in the correct folder: 
 
